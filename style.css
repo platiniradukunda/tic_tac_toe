@@ -12,13 +12,18 @@
                          "seven eight nine"
     ;
 }
+
 /* The class for all the squares that parents their characteristics */
 .grid{
-  width:15vw;
-  height:20vh;
-
+  width: 20vw;
+  height: 20vh;
 }
-/* I am separating all the playing grid into individual square and adding borders so that I can bet see what the user will see on their screens */
+.grid:hover{
+    cursor: pointer;
+    background-color: rgba(199, 192, 192, 0.034);
+}
+
+/* I am separating all the playing grids into individual squares and adding borders so that I can better see what the user will see on their screens */
 #one{
     grid-area: one;
     border-bottom: 1px solid white;
@@ -57,4 +62,32 @@
 }
 #nine{
     grid-area: nine;
+}
+.winner{
+    background-color: black transparent;
+    color: white;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;   /* this is just the default for when the game is being played */
+}
+.restart{
+    cursor: pointer;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+.restart:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
 }
