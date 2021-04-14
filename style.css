@@ -1,1 +1,60 @@
+/* The major container that hold all my divs */
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    background-color: black;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    grid-template-areas: "one two three"
+                         "four five six"
+                         "seven eight nine"
+    ;
+}
+/* The class for all the squares that parents their characteristics */
+.grid{
+  width:15vw;
+  height:20vh;
 
+}
+/* I am separating all the playing grid into individual square and adding borders so that I can bet see what the user will see on their screens */
+#one{
+    grid-area: one;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+#two{
+    grid-area: two;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+#three{
+    grid-area: three;
+    border-bottom: 1px solid white;
+}
+#four{
+    grid-area: four;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+#five{
+    grid-area: five;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+#six{
+    grid-area: six;
+    border-bottom: 1px solid white;
+}
+#seven{
+    grid-area: seven;
+    border-right: 1px solid white;
+}
+#eight{
+    grid-area: eight;
+    border-right: 1px solid white;
+}
+#nine{
+    grid-area: nine;
+}
