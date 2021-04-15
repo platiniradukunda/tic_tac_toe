@@ -100,13 +100,14 @@ gridContainers.forEach(grid => {
     grid.addEventListener('click', playerOption, { once: true});
 })
 
-
+// , { once: true}
 
 // function restartGame that clears the board. starts by clearing text from all the grids. Then removes the eventListener that it had heard when we user clicked on grid earlier. Fnally, remove the winner/draw message.
 var restartGame = () => {
     gridContainers.forEach(grid => {
         grid.textContent = "";
         grid.removeEventListener('click', playerOption);
+        grid.addEventListener('click', playerOption, { once: true});
     });
     counter = 0;
     displayingTheMessage.classList.remove("display");
