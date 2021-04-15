@@ -15,7 +15,8 @@ var displayingTheMessage = document.getElementById("display");
 // declaring a counter that keeps track of the number of turns
 var counter = 0;
 
-// creating the function that will be triggered any time you click a grid
+
+// creating the function that will be triggered any time you click a grid/play the game
 var playerOption = (grid) => {
     // target the grid that triggered the function(The one that was clicked). That grid is now called box
     var box = grid.target;
@@ -88,29 +89,28 @@ var playerOption = (grid) => {
     }
     // if it doesn't happen and there are no more grids to click then it is a draw. Turns have been changed 9 times which means that the board is full therefore it is a draw
     else if(counter == 9){
-        winningMessage.innerText ="Draw" ;
+        winningMessage.innerText ="Draw!" ;
         displayingTheMessage.classList.add("display");       
         }
 }
 
-// creating a loop that goes through my array that listens for a click and performs a function. This loop also ensures that the grids can only be clicked on once. It won't allow you to click on the grid more than once.
+
+// creating a loop that goes through my array that listens for a click and performs a function. This loop also ensures that the grids can only be clicked on once. It won't allow you to click on a grid more than once.
 gridContainers.forEach(grid => {
     grid.addEventListener('click', playerOption, { once: true});
 })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// function restartGame that clears the board. starts by clearing text from all the grids. Then removes the eventListener that it had heard when we user clicked on grid earlier. Fnally, remove the winner/draw message.
+var restartGame = () => {
+    gridContainers.forEach(grid => {
+        grid.textContent = "";
+        grid.removeEventListener('click', playerOption);
+    });
+    counter = 0;
+    displayingTheMessage.classList.remove("display");
+}
+// declaring play again button
+var playAgainButton = document.querySelector(".restart")
+playAgainButton.addEventListener('click', restartGame)
