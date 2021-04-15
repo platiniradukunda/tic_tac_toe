@@ -7,72 +7,100 @@ const player2 = "O"; // creating player 2 as O
 
 var turn = true;    // declaring a turn variable so that players can take turns
 
-var winningMessage = document.getElementsByClassName("message");
+// declaring a variable for my message div. I will write the winning message here
+var winningMessage = document.querySelector(".message");
+
+// declaring a variable for the winner div so that I can show the winner message when someone wins
+var displayingTheMessage = document.getElementById("display"); 
 
 // creating the function that will be triggered any time you click a grid
 var playerOption = (grid) => {
     // target the grid that triggered the function(The one that was clicked). That grid is now called box
     var box = grid.target;
     // fill grid with X or O
-    if(turn == true){
+    if(turn == true){           // specifying true as player 1
         box.innerText = player1;  // modifying box accordingly, typing x for player 1
     } else{
         box.innerText = player2;   // typing O for player 2
     }
 
-    // Taking turns between player 1 and player 2. Starts off as player 1(x)
-    turn = !turn;   // makes turn now equal to false or true if it was false
+    // Taking turns between player 1 and player 2. Starts off as player 1(x). Makes turn now equal to false or true if it was false. this will happen after each player plays and will give the other player an opportunity to play on the next click
+    turn = !turn;
 
     // determine a winner
-    // if the text in a particular grid is equal to player1 and it occurs in one of the defined patterns then X wins regardless of how many moves are left
+    // if the text in a particular grid is equal to player1 and it occurs in one of the defined patterns then X wins regardless of how many moves are left. Possible combinations
     if (gridContainers[0].textContent == player1 && gridContainers[1].textContent == player1 && gridContainers[2].textContent == player1){
+        // Typing the winner in the text field if this combination is achieved
+        winningMessage.innerText = player1 + " wins!";
+        // this is so that a class called display can be added to the winner div then the display will be flex in css and it will appear on the screen 
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[3].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[5].textContent == player1){
         winningMessage.innerText = player1 + "wins";
-    } else if (gridContainers[3].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[5].textContent == player1){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[6].textContent == player1 && gridContainers[7].textContent == player1 && gridContainers[8].textContent == player1){
         winningMessage.innerText = player1 + "wins";
-    } else if (gridContainers[6].textContent == player1 && gridContainers[7].textContent == player1 && gridContainers[8].textContent == player1){
-        winningMessage.innerText = player1 + "wins";
+        displayingTheMessage.classList.add("display");
     } else if (gridContainers[0].textContent == player1 && gridContainers[3].textContent == player1 && gridContainers[6].textContent == player1){
         winningMessage.innerText = player1 + "wins";
-    } else if (gridContainers[1].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[7].textContent == player1){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[1].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[7].textContent == player1){
         winningMessage.innerText = player1 + "wins";
-    } else if (gridContainers[2].textContent == player1 && gridContainers[5].textContent == player1 && gridContainers[8].textContent == player1){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[2].textContent == player1 && gridContainers[5].textContent == player1 && gridContainers[8].textContent == player1){
         winningMessage.innerText = player1 + "wins";
-    } else if (gridContainers[0].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[8].textContent == player1){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[0].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[8].textContent == player1){
         winningMessage.innerText = player1 + "wins";
-    } else if (gridContainers[2].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[6].textContent == player1){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[2].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[6].textContent == player1){
         winningMessage.innerText = player1 + "wins";
-    }
+        displayingTheMessage.classList.add("display");
+    }else 
 
-    
     // if the text in a particular grid is equal to player1 and it occurs in one of the defined patterns then O wins regardless of how many moves are left
     if (gridContainers[0].textContent == player2 && gridContainers[1].textContent == player2 && gridContainers[2].textContent == player2){
         winningMessage.innerText = player2 + "wins";
-    } else if (gridContainers[3].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[5].textContent == player2){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[3].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[5].textContent == player2){
         winningMessage.innerText = player2 + "wins";
-    } else if (gridContainers[6].textContent == player2 && gridContainers[7].textContent == player2 && gridContainers[8].textContent == player2){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[6].textContent == player2 && gridContainers[7].textContent == player2 && gridContainers[8].textContent == player2){
         winningMessage.innerText = player2 + "wins";
-    } else if (gridContainers[0].textContent == player2 && gridContainers[3].textContent == player2 && gridContainers[6].textContent == player2){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[0].textContent == player2 && gridContainers[3].textContent == player2 && gridContainers[6].textContent == player2){
         winningMessage.innerText = player2 + "wins";
-    } else if (gridContainers[1].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[7].textContent == player2){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[1].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[7].textContent == player2){
         winningMessage.innerText = player2 + "wins";
-    } else if (gridContainers[2].textContent == player2 && gridContainers[5].textContent == player2 && gridContainers[8].textContent == player2){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[2].textContent == player2 && gridContainers[5].textContent == player2 && gridContainers[8].textContent == player2){
         winningMessage.innerText = player2 + "wins";
-    } else if (gridContainers[0].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[8].textContent == player2){
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[0].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[8].textContent == player2){
         winningMessage.innerText = player2 + "wins";
-    } else if (gridContainers[2].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[6].textContent == player2){
-        winningMessage.innerText = player2 + "wins";
+        displayingTheMessage.classList.add("display");
+    }else if (gridContainers[2].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[6].textContent == player2){
+        winningMessage.innerText = player2 + "wins" ;
+        displayingTheMessage.classList.add("display");
     }
-    // if it doesn't happen and there are no more grids to click then it is a draw
+    // if it doesn't happen and there are no more grids to click then it is a draw.
     else {
-        winningMessage.innerText = "Draw";
+        if(){
+        winningMessage.innerText = "Draw!";
+        displayingTheMessage.classList.add("display");
+        }
     }
+
+
 
 }
 
-// creating a loop that goes through my array that listens for a click and performs a function 
+// creating a loop that goes through my array that listens for a click and performs a function. This loop also ensures that the grids can only be clicked on once. It won't allow you to click on the grid more than once.
 gridContainers.forEach(grid => {
     grid.addEventListener('click', playerOption, { once: true});
 })
+
+
 
 
 

@@ -96,3 +96,6 @@
     color: black;
     border: 2px solid black;
 }
+.winner.display {
+    display: flex;
+}
