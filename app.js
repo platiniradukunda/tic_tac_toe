@@ -16,9 +16,10 @@ var displayingTheMessage = document.getElementById("display");
 var counter = 0;
 
 // score counter to display on scoreboard
-var player1win = 0;
-var player2win = 0;
-
+var playerXwin = 0;
+var playerXWinCounter = document.querySelector(".playerXWinCounter")
+var playerOwin = 0;
+var playerOWinCounter = document.querySelector(".playerOWinCounter")
 
 // turn display on webpage. Will tell user whether it is X's turn or O's turn
 var turnDisplay = document.querySelector(".turndisplay");
@@ -48,56 +49,89 @@ var playerOption = (grid) => {
     // determine a winner
     // if the text in a particular grid is equal to player1 and it occurs in one of the defined combinations then X wins regardless of how many moves are left. Possible combinations
     if (gridContainers[0].textContent == player1 && gridContainers[1].textContent == player1 && gridContainers[2].textContent == player1){
+        // this will increment the win count by 1 and also print them in the scoreboard
+        playerXwin++;
+        playerXWinCounter.innerText = playerXwin
         // Typing the winner in the text field if this combination is achieved
         winningMessage.innerText = player1 + " wins!";
         // this is so that a class called display can be added to the winner div then the display will be flex in css and it will appear on the screen 
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[3].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[5].textContent == player1){
+        playerXwin++;
+        playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[6].textContent == player1 && gridContainers[7].textContent == player1 && gridContainers[8].textContent == player1){
+        playerXwin++;
+        playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
     } else if (gridContainers[0].textContent == player1 && gridContainers[3].textContent == player1 && gridContainers[6].textContent == player1){
+        playerXwin++;
+        playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[1].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[7].textContent == player1){
+        playerXwin++;
+        playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[2].textContent == player1 && gridContainers[5].textContent == player1 && gridContainers[8].textContent == player1){
+        playerXwin++;
+        playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[0].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[8].textContent == player1){
+        playerXwin++;
+        playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[2].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[6].textContent == player1){
+        playerXwin++;
+        playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
     }else 
 
     // if the text in a particular grid is equal to player2 and it occurs in one of the defined combinations then O  wins! regardless of how many moves are left
     if (gridContainers[0].textContent == player2 && gridContainers[1].textContent == player2 && gridContainers[2].textContent == player2){
+        playerOwin++
+        playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[3].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[5].textContent == player2){
+        playerOwin++
+        playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[6].textContent == player2 && gridContainers[7].textContent == player2 && gridContainers[8].textContent == player2){
+        playerOwin++
+        playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[0].textContent == player2 && gridContainers[3].textContent == player2 && gridContainers[6].textContent == player2){
+        playerOwin++
+        playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[1].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[7].textContent == player2){
+        playerOwin++
+        playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[2].textContent == player2 && gridContainers[5].textContent == player2 && gridContainers[8].textContent == player2){
+        playerOwin++
+        playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[0].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[8].textContent == player2){
+        playerOwin++
+        playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
     }else if (gridContainers[2].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[6].textContent == player2){
+        playerOwin++
+        playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!" ;
         displayingTheMessage.classList.add("display");
     }
