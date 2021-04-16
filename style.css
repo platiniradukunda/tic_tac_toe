@@ -1,20 +1,15 @@
-/* The major container that hold all my divs */
-.container{
+.parent{
     width: 100vw;
     height: 100vh;
-    display: grid;
     background-color: black;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    grid-template-areas:"title title title" 
-                         "one two three"
-                         "four five six"
-                         "seven eight nine"
+    display: grid;
+    grid-template-areas: "title title"
+                         "container clear"
+                         "container scoreboard"
+                         "turn turn"
     ;
-    
-    margin-top: -2%;
 }
+/* title class that has the game name */
 .title{
     grid-area: title;
     color: white;
@@ -24,7 +19,24 @@
     align-content: center;
     justify-content: center;
     font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 10%;
+}
+
+
+/* The major container that hold all the game divs */
+.container{
+    grid-area: container;
+    width: 50vw;
+    margin-left: 17%;
+    margin-top: 5%;
+    display: grid;
+    background-color: black;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    grid-template-areas: "one two three"
+                         "four five six"
+                         "seven eight nine"
+    ;
 }
 
 /* The class for all the squares that parents their characteristics */
@@ -82,6 +94,7 @@
 #nine{
     grid-area: nine;
 }
+/* winner class has the display message and the play again button */
 .winner{
     background-color: black transparent;
     color: rgb(109, 69, 69);
@@ -98,6 +111,7 @@
     right: 0;
     display: none;   /* this is just the default for when the game is being played */
 }
+/* Play again button styling */
 .restart{
     cursor: pointer;
     font-size: 30px;
@@ -112,4 +126,42 @@
 }
 .winner.display {
     display: flex;
+}
+/* the clear board button styling */
+.clear{
+    grid-area: clear;
+    align-items: center;
+    }
+.clearboard{
+    cursor: pointer;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px white solid;
+    margin-top: 30%;
+    margin-left: 6%;
+}
+.clearboard:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* start of scoreboard styling */
+.scoreboard{
+    grid-area: scoreboard;
+    border: solid 1px red;
+    color: white;
+}
+
+
+/* styling start of turn div */
+.turn{
+    grid-area: turn;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
 }

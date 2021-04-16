@@ -8,18 +8,29 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="parent">
         <div class="title">TIC TAC TOE</div>
-        <div class="grid" id="one"></div>
-        <div class="grid" id="two"></div>
-        <div class="grid" id="three"></div>
-        <div class="grid" id="four"></div>
-        <div class="grid" id="five"></div>
-        <div class="grid" id="six"></div>
-        <div class="grid" id="seven"></div>
-        <div class="grid" id="eight"></div>
-        <div class="grid" id="nine"></div>   
-    </div>
+        <div class="container">
+            <div class="grid" id="one"></div>
+            <div class="grid" id="two"></div>
+            <div class="grid" id="three"></div>
+            <div class="grid" id="four"></div>
+            <div class="grid" id="five"></div>
+            <div class="grid" id="six"></div>
+            <div class="grid" id="seven"></div>
+            <div class="grid" id="eight"></div>
+            <div class="grid" id="nine"></div>   
+        </div>
+        <div class="clear">
+            <button class="clearboard">Clear board</button>
+        </div>
+        <div class="scoreboard">
+            SCOREBOARD
+        </div>
+        <div class="turn">
+            <h3>So and so 's turn</h3>
+        </div>
+    </div>  
     <div class="winner" id="display">
         <div class="message"></div>
         <button class="restart">Play again</button>

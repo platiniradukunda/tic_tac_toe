@@ -110,8 +110,14 @@ var restartGame = () => {
         grid.addEventListener('click', playerOption, { once: true});
     });
     counter = 0;
+    turn = true;
     displayingTheMessage.classList.remove("display");
 }
 // declaring play again button
 var playAgainButton = document.querySelector(".restart")
 playAgainButton.addEventListener('click', restartGame)
+
+
+// clear board button. Restarts the game and keeps count of all the other variables
+var clearBoardButton = document.querySelector(".clearboard")
+clearBoardButton.addEventListener('click', restartGame)
