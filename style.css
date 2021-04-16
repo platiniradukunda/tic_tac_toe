@@ -7,16 +7,30 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    grid-template-areas: "one two three"
+    grid-template-areas:"title title title" 
+                         "one two three"
                          "four five six"
                          "seven eight nine"
     ;
+    
+    margin-top: -2%;
+}
+.title{
+    grid-area: title;
+    color: white;
+    font-size: 7.1em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10%;
 }
 
 /* The class for all the squares that parents their characteristics */
 .grid{
-  width: 15vw;
-  height: 15vh;
+  width: 17vw;
+  height: 17vh;
   color: white;
   display: flex;
   justify-content: center;
