@@ -15,6 +15,13 @@ var displayingTheMessage = document.getElementById("display");
 // declaring a counter that keeps track of the number of turns
 var counter = 0;
 
+// turn display on webpage. Will tell user whether it is X's turn or O's turn
+var turnDisplay = document.querySelector(".turndisplay");
+if(turn == true){
+    turnDisplay.innerText = player1 +  "'s turn"
+} else {
+    turnDisplay.innerText = player2 +  "'s turn"
+}
 
 // creating the function that will be triggered any time you click a grid/play the game
 var playerOption = (grid) => {
@@ -23,8 +30,10 @@ var playerOption = (grid) => {
     // fill grid with X or O
     if(turn == true){           // specifying true as player 1
         box.innerText = player1;  // modifying box accordingly, typing x for player 1
+        turnDisplay.innerText = player2 +  "'s turn"
     } else{
         box.innerText = player2;   // typing O for player 2
+        turnDisplay.innerText = player1 +  "'s turn"
     }
 
     // Taking turns between player 1 and player 2. Starts off as player 1(x). Makes turn now equal to false or true if it was false. this will happen after each player plays and will give the other player an opportunity to play on the next click
@@ -110,14 +119,13 @@ var restartGame = () => {
         grid.addEventListener('click', playerOption, { once: true});
     });
     counter = 0;
-    turn = true;
     displayingTheMessage.classList.remove("display");
 }
 // declaring play again button
-var playAgainButton = document.querySelector(".restart")
-playAgainButton.addEventListener('click', restartGame)
+var playAgainButton = document.querySelector(".restart");
+playAgainButton.addEventListener('click', restartGame);
 
 
 // clear board button. Restarts the game and keeps count of all the other variables
-var clearBoardButton = document.querySelector(".clearboard")
-clearBoardButton.addEventListener('click', restartGame)
+var clearBoardButton = document.querySelector(".clearboard");
+clearBoardButton.addEventListener('click', restartGame);
