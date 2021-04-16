@@ -15,6 +15,11 @@ var displayingTheMessage = document.getElementById("display");
 // declaring a counter that keeps track of the number of turns
 var counter = 0;
 
+// score counter to display on scoreboard
+var player1win = 0;
+var player2win = 0;
+
+
 // turn display on webpage. Will tell user whether it is X's turn or O's turn
 var turnDisplay = document.querySelector(".turndisplay");
 if(turn == true){

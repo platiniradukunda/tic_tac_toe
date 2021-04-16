@@ -140,7 +140,7 @@
     font-family: 'Courier New', Courier, monospace;
     border: 2px white solid;
     margin-top: 30%;
-    margin-left: 6%;
+    margin-left: 23%;
 }
 .clearboard:hover{
     background-color: white;
@@ -152,10 +152,46 @@
 /* start of scoreboard styling */
 .scoreboard{
     grid-area: scoreboard;
-    border: solid 1px red;
+    border: solid 1pxwhite;
     color: white;
+    font-family:'Courier New', Courier, monospace;
+    margin-right: 15%;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "board board"
+                         "playerX playerO"
+    ;
+    height: 20vh;
 }
-
+.board{
+    grid-area: board;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2%;
+}
+.playerX{
+    grid-area: playerX;
+    border-top: solid 1px white;
+    border-right: solid 1px white;
+    width: 8vw;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    margin-top: -19%;
+    margin-bottom: 5%;
+}
+.playerO{
+    grid-area: playerO;
+    border-top: solid 1px white;
+    width: 8vw;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    margin-top: -19%;
+    margin-bottom: 5%;
+}
 
 /* styling start of turn div */
 .turn{
