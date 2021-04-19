@@ -8,11 +8,10 @@ CSS was crucial for the game creation as it enabled me to style my webpage. I wa
 I utilized javascript to code the logic and functionality behind the game.
 
 
-To be able to to play this game, you will need to download three files and store them in the same folder;
+To be able to to play this game, you will need to download four files and store them in the same folder;
 1. the index.html file
 2. the style.css file 
 3. the app.js file
-
-I am working on adding music to the game to provide a better user experience when playing the game
+4. the sounds folder
 
 Enjoy the game!!!
