@@ -29,17 +29,32 @@ if(turn == true){
     turnDisplay.innerText = player2 +  "'s turn"
 }
 
+// declaring my game sounds
+var playSound = new Audio();
+var playAgain = new Audio();
+
+// function that loads all my game sounds
+var gameSounds = () => {
+    playSound.src = "/sounds/playSound.mp3";
+    playAgain.src = "/sounds/playAgain.mp3";
+}
+
+
 // creating the function that will be triggered any time you click a grid/play the game
 var playerOption = (grid) => {
+    // calling my sounds function so that I can be able to play my sounds when I need to
+    gameSounds(); 
     // target the grid that triggered the function(The one that was clicked). That grid is now called box
     var box = grid.target;
     // fill grid with X or O
     if(turn == true){           // specifying true as player 1
         box.innerText = player1;  // modifying box accordingly, typing x for player 1
         turnDisplay.innerText = player2 +  "'s turn"
+        playSound.play();
     } else{
         box.innerText = player2;   // typing O for player 2
         turnDisplay.innerText = player1 +  "'s turn"
+        playSound.play();
     }
 
     // Taking turns between player 1 and player 2. Starts off as player 1(x). Makes turn now equal to false or true if it was false. this will happen after each player plays and will give the other player an opportunity to play on the next click
@@ -56,41 +71,50 @@ var playerOption = (grid) => {
         winningMessage.innerText = player1 + " wins!";
         // this is so that a class called display can be added to the winner div then the display will be flex in css and it will appear on the screen 
         displayingTheMessage.classList.add("display");
+        // Also play a sound when a winner is declared
+        playAgain.play();
     }else if (gridContainers[3].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[5].textContent == player1){
         playerXwin++;
         playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[6].textContent == player1 && gridContainers[7].textContent == player1 && gridContainers[8].textContent == player1){
         playerXwin++;
         playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     } else if (gridContainers[0].textContent == player1 && gridContainers[3].textContent == player1 && gridContainers[6].textContent == player1){
         playerXwin++;
         playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[1].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[7].textContent == player1){
         playerXwin++;
         playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[2].textContent == player1 && gridContainers[5].textContent == player1 && gridContainers[8].textContent == player1){
         playerXwin++;
         playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[0].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[8].textContent == player1){
         playerXwin++;
         playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[2].textContent == player1 && gridContainers[4].textContent == player1 && gridContainers[6].textContent == player1){
         playerXwin++;
         playerXWinCounter.innerText = playerXwin
         winningMessage.innerText = player1 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else 
 
     // if the text in a particular grid is equal to player2 and it occurs in one of the defined combinations then O  wins! regardless of how many moves are left
@@ -99,46 +123,55 @@ var playerOption = (grid) => {
         playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[3].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[5].textContent == player2){
         playerOwin++
         playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[6].textContent == player2 && gridContainers[7].textContent == player2 && gridContainers[8].textContent == player2){
         playerOwin++
         playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[0].textContent == player2 && gridContainers[3].textContent == player2 && gridContainers[6].textContent == player2){
         playerOwin++
         playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[1].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[7].textContent == player2){
         playerOwin++
         playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[2].textContent == player2 && gridContainers[5].textContent == player2 && gridContainers[8].textContent == player2){
         playerOwin++
         playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[0].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[8].textContent == player2){
         playerOwin++
         playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!";
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }else if (gridContainers[2].textContent == player2 && gridContainers[4].textContent == player2 && gridContainers[6].textContent == player2){
         playerOwin++
         playerOWinCounter.innerText = playerOwin
         winningMessage.innerText = player2 + " wins!" ;
         displayingTheMessage.classList.add("display");
+        playAgain.play();
     }
     // if it doesn't happen and there are no more grids to click then it is a draw. Turns have been changed 9 times which means that the board is full therefore it is a draw
     else if(counter == 9){
         winningMessage.innerText ="Draw!" ;
-        displayingTheMessage.classList.add("display");       
+        displayingTheMessage.classList.add("display");
+        playAgain.play();   
         }
 }
 
@@ -152,6 +185,10 @@ gridContainers.forEach(grid => {
 
 // function restartGame that clears the board. starts by clearing text from all the grids. Then removes the eventListener that it had heard when we user clicked on grid earlier. Fnally, remove the winner/draw message.
 var restartGame = () => {
+    // calling the sounds function
+    gameSounds();   
+    // pause the sound that is playing when you click to play the game again
+    playAgain.pause();
     gridContainers.forEach(grid => {
         grid.textContent = "";
         grid.removeEventListener('click', playerOption);
